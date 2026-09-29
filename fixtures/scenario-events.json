@@ -1,0 +1,232 @@
+{
+  "project_id": "P-1001",
+  "events": [
+    {
+      "seq": 1,
+      "kind": "ProjectInitiated",
+      "at": "2026-09-01T10:00:00",
+      "actor_id": "brand-compliance",
+      "payload": {
+        "project_id": "P-1001",
+        "brand": "康馨健康",
+        "category": "医疗器械",
+        "medical": true
+      },
+      "idempotency_key": null,
+      "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "d7bdaa1c4cefffbccff634d6ef2a0b9df6ec67580fe8ca2fe5ac347f66917a08"
+    },
+    {
+      "seq": 2,
+      "kind": "QualificationRegistered",
+      "at": "2026-09-01T11:00:00",
+      "actor_id": "brand-compliance",
+      "payload": {
+        "qualification_id": "Q-1",
+        "product": "血压仪 X100",
+        "doc_ref": "资质档案://Q-1",
+        "valid_until": "2027-12-31",
+        "proven_facts": [
+          "经过临床验证",
+          "适用于家庭血压监测"
+        ]
+      },
+      "idempotency_key": null,
+      "prev_hash": "d7bdaa1c4cefffbccff634d6ef2a0b9df6ec67580fe8ca2fe5ac347f66917a08",
+      "hash": "24b07686ff8160fdd84131b3d6b4919fddf84293dec6915302af385f966667ee"
+    },
+    {
+      "seq": 3,
+      "kind": "DigitalHumanRegistered",
+      "at": "2026-09-01T12:00:00",
+      "actor_id": "avatar-vendor",
+      "payload": {
+        "human_id": "H-1",
+        "provider": "数字人生成公司",
+        "real_person": "张某某（本人授权）",
+        "authorization_ref": "授权书://H-1",
+        "authorization_valid_until": "2027-06-30"
+      },
+      "idempotency_key": null,
+      "prev_hash": "24b07686ff8160fdd84131b3d6b4919fddf84293dec6915302af385f966667ee",
+      "hash": "83b2b29e84654db2d2f380ea7db3e70e6397f17202a370c5ca37fc843c2f7dca"
+    },
+    {
+      "seq": 4,
+      "kind": "AssetCreated",
+      "at": "2026-09-01T13:00:00",
+      "actor_id": "outsource-script",
+      "payload": {
+        "asset_id": "A-1",
+        "asset_kind": "数字人视频",
+        "title": "血压仪科普短片",
+        "qualification_id": "Q-1",
+        "human_id": "H-1"
+      },
+      "idempotency_key": null,
+      "prev_hash": "83b2b29e84654db2d2f380ea7db3e70e6397f17202a370c5ca37fc843c2f7dca",
+      "hash": "1287cb1459700df2404128f2f324c577328cb1fefaffc7b9e58b639bdef31550"
+    },
+    {
+      "seq": 5,
+      "kind": "VersionSubmitted",
+      "at": "2026-09-01T14:00:00",
+      "actor_id": "outsource-script",
+      "payload": {
+        "version_id": "V-1",
+        "asset_id": "A-1",
+        "asset_kind": "数字人视频",
+        "parent_version": null,
+        "derived_from": [],
+        "human_id": "H-1",
+        "qualification_id": "Q-1",
+        "claimed_facts": [
+          "经过临床验证",
+          "适用于家庭血压监测"
+        ],
+        "changed_facts": [
+          "脚本初稿",
+          "数字人 H-1"
+        ],
+        "medical": true,
+        "content_hash": "hash-v1",
+        "truth_owner": "brand-compliance",
+        "reviewer_hint": "platform-reviewer-a",
+        "review_deadline_hours": 48
+      },
+      "idempotency_key": null,
+      "prev_hash": "1287cb1459700df2404128f2f324c577328cb1fefaffc7b9e58b639bdef31550",
+      "hash": "95c1106c3bc4441e18defc488f74a74de67fbcbfc01718f9e48dc08814015145"
+    },
+    {
+      "seq": 6,
+      "kind": "MedicalIdentityChecked",
+      "at": "2026-09-01T15:00:00",
+      "actor_id": "platform-reviewer-a",
+      "payload": {
+        "version_id": "V-1",
+        "authorized": true,
+        "verdict": "授权书在有效期内，肖像与声音授权齐全",
+        "evidence_refs": [
+          "授权书://H-1"
+        ]
+      },
+      "idempotency_key": null,
+      "prev_hash": "95c1106c3bc4441e18defc488f74a74de67fbcbfc01718f9e48dc08814015145",
+      "hash": "e8d315e1cc2dbbb8f6be8e67bb6c9e4043cdae3d0e9b8a61ec7d18038599afea"
+    },
+    {
+      "seq": 7,
+      "kind": "ProductFactsVerified",
+      "at": "2026-09-01T16:00:00",
+      "actor_id": "platform-reviewer-a",
+      "payload": {
+        "version_id": "V-1",
+        "verified": true,
+        "verdict": "宣称与注册备案事实一致",
+        "matched_facts": [
+          "经过临床验证",
+          "适用于家庭血压监测"
+        ],
+        "unmatched_facts": []
+      },
+      "idempotency_key": null,
+      "prev_hash": "e8d315e1cc2dbbb8f6be8e67bb6c9e4043cdae3d0e9b8a61ec7d18038599afea",
+      "hash": "55f78e9170544bed020772eeb0e31f1fb83fe7c92e89d906eaaa0cb1426e0832"
+    },
+    {
+      "seq": 8,
+      "kind": "ReviewConcluded",
+      "at": "2026-09-01T17:00:00",
+      "actor_id": "platform-reviewer-a",
+      "payload": {
+        "version_id": "V-1",
+        "scope": "release",
+        "decision": "approved",
+        "comment": "内容与资质一致，准予发布"
+      },
+      "idempotency_key": null,
+      "prev_hash": "55f78e9170544bed020772eeb0e31f1fb83fe7c92e89d906eaaa0cb1426e0832",
+      "hash": "196473249a120ae3a658e5edf3f770d527d4e81f10748e33f9da8d503a99a99a"
+    },
+    {
+      "seq": 9,
+      "kind": "ReleaseApproved",
+      "at": "2026-09-01T19:00:00",
+      "actor_id": "platform-reviewer-a",
+      "payload": {
+        "decision_id": "D-1",
+        "version_id": "V-1",
+        "medical": true,
+        "identity_authorized": true,
+        "product_facts_verified": true,
+        "review_event_seqs": [
+          8
+        ]
+      },
+      "idempotency_key": null,
+      "prev_hash": "196473249a120ae3a658e5edf3f770d527d4e81f10748e33f9da8d503a99a99a",
+      "hash": "2be63f74374c56832a1f13b02b67e35d35d01ab26b4e9ecb69e86654a4309f31"
+    },
+    {
+      "seq": 10,
+      "kind": "ChannelPrepared",
+      "at": "2026-09-01T20:00:00",
+      "actor_id": "channel-operator",
+      "payload": {
+        "channel": "短视频平台",
+        "operator_company": "渠道代运营公司"
+      },
+      "idempotency_key": null,
+      "prev_hash": "2be63f74374c56832a1f13b02b67e35d35d01ab26b4e9ecb69e86654a4309f31",
+      "hash": "fdaef29dce5263376b53f215ad52306dff8391ae9dd96e6a44aca406462f8637"
+    },
+    {
+      "seq": 11,
+      "kind": "Published",
+      "at": "2026-09-01T21:00:00",
+      "actor_id": "channel-operator",
+      "payload": {
+        "publish_id": "P-1",
+        "channel": "短视频平台",
+        "version_id": "V-1"
+      },
+      "idempotency_key": "cbk-p-1",
+      "prev_hash": "fdaef29dce5263376b53f215ad52306dff8391ae9dd96e6a44aca406462f8637",
+      "hash": "6910594a372a95016b8fb08033357f1532859d52b5db7aa0b80f0261821fd8e3"
+    },
+    {
+      "seq": 12,
+      "kind": "ComplaintFiled",
+      "at": "2026-09-01T22:00:00",
+      "actor_id": "brand-compliance",
+      "payload": {
+        "complaint_id": "C-1",
+        "versions": [
+          "V-1"
+        ],
+        "summary": "消费者质疑数字人疗效表述"
+      },
+      "idempotency_key": null,
+      "prev_hash": "6910594a372a95016b8fb08033357f1532859d52b5db7aa0b80f0261821fd8e3",
+      "hash": "82d0cb8b2ad3f766168f340644ae9c32990f8071be95de2c9e7efa52663e7a1c"
+    },
+    {
+      "seq": 13,
+      "kind": "LineageFrozen",
+      "at": "2026-09-01T23:00:00",
+      "actor_id": "regulator-1",
+      "payload": {
+        "reason": "监管调查：疗效投诉",
+        "trigger_kind": "complaint",
+        "trigger_ref": "C-1",
+        "versions": [
+          "V-1"
+        ]
+      },
+      "idempotency_key": null,
+      "prev_hash": "82d0cb8b2ad3f766168f340644ae9c32990f8071be95de2c9e7efa52663e7a1c",
+      "hash": "8599c6117e6ae76e61b783ddbfd9dbab1ccef4d8bce7874a4771b85941af941f"
+    }
+  ]
+}
